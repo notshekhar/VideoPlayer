@@ -41,7 +41,7 @@ skip.forEach(s => {
   }
 })
 range.forEach(r => {
-  r.onchange = () =>{
+  r.oninput = () =>{
     video[r.name] = r.value
   }
 })
