@@ -5,6 +5,7 @@ let progressBar = document.querySelector('.progress_line')
 let toggle = document.querySelector('.toggle')
 let skip = document.querySelectorAll('[data-skip]')
 let range = document.querySelectorAll('.playerslider')
+let buffer = document.querySelector('.downloaded')
 
 function togglePlay(){
   let method = video.paused ? 'play' : 'pause'
@@ -12,7 +13,7 @@ function togglePlay(){
 }
 function updateButton(){
   let icon = video.paused ? '►' : '❚❚'
-  console.log(icon)
+  // console.log(icon)
   toggle.innerText = icon
 }
 
@@ -43,6 +44,7 @@ range.forEach(r => {
 
 video.ontimeupdate = () => {
   let percentage = (video.currentTime/video.duration)*100
-  console.log(percentage)
   progressBar.style.flexBasis = `${percentage}%`
+  let buff = video.buffered.end(0) / video.seekable.end(0) * 100
+  buffer.style.flexBasis = `${buff}%`
 }
