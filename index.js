@@ -44,7 +44,7 @@ range.forEach(r => {
 
 video.ontimeupdate = () => {
   let percentage = (video.currentTime/video.duration)*100
-  progressBar.style.flexBasis = `${percentage}%`
+  progressBar.style.width = `${percentage}%`
   let buff = video.buffered.end(0) / video.seekable.end(0) * 100
-  buffer.style.flexBasis = `${buff}%`
+  buffer.style.width = `${buff}%`
 }
