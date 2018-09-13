@@ -17,7 +17,11 @@ function updateButton(){
   toggle.innerText = icon
 }
 
-
+progress.onclick = e => {
+  let time = e.layerX/progress.getBoundingClientRect().width * 100
+  time = video.duration * time /100
+  video.currentTime = time
+}
 video.onclick = () => {
   togglePlay()
 }
