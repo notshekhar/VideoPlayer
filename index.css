@@ -105,7 +105,14 @@ body {
   border-top-right-radius: 300px;
   border-bottom-right-radius: 300px;
 }
-
+.downloaded{
+  width:50%;
+  background:rgba(255,255,255,0.5);
+  flex:0;
+  flex-basis:0%;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+}
 /* unholy css to style input type="range" */
 
 input[type=range] {
